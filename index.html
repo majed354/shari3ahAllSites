@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="بوابة موحدة تجمع المنصات الإلكترونية لكلية الشريعة والأنظمة بجامعة الطائف."
+    />
+    <title>المنصات الإلكترونية بكلية الشريعة والأنظمة</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="رأس الصفحة">
+      <a class="brand" href="#top" aria-label="الانتقال إلى بداية الصفحة">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M8 17.5 24 8l16 9.5v18.7L24 42 8 36.2V17.5Z" />
+            <path d="M16 21h16M16 27h16M16 33h10" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span>كلية الشريعة والأنظمة</span>
+          <small>جامعة الطائف</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a href="#platforms">المنصات</a>
+        <a href="#overview">نبذة</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-content">
+          <p class="eyebrow">بوابة الوصول الموحدة</p>
+          <h1 id="page-title">المنصات الإلكترونية بكلية الشريعة والأنظمة</h1>
+          <p class="hero-lead">
+            صفحة واحدة تجمع أهم روابط الكلية: النشاط العلمي، مؤشرات الأداء،
+            الخطط والمقررات، تقويم الفعاليات، وساحة الاستطلاعات.
+          </p>
+          <div class="hero-actions" aria-label="روابط سريعة">
+            <a class="primary-action" href="#platforms">
+              <span>استعراض المنصات</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11 5 4 12l7 7M5 12h15" />
+              </svg>
+            </a>
+            <a
+              class="secondary-action"
+              href="https://kpishare3h.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>مؤشرات الأداء</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 17V9M12 17V5M16 17v-6M5 20h14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="directory-section" id="platforms" aria-labelledby="platforms-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-kicker">روابط الكلية</p>
+            <h2 id="platforms-title">اختر المنصة المطلوبة</h2>
+          </div>
+
+          <div class="directory-tools" aria-label="أدوات البحث والتصفية">
+            <label class="search-box" for="platform-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m21 21-4.2-4.2M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+              </svg>
+              <input
+                id="platform-search"
+                type="search"
+                placeholder="ابحث عن منصة"
+                autocomplete="off"
+              />
+            </label>
+
+            <div class="filter-tabs" role="group" aria-label="تصنيف المنصات">
+              <button class="filter-tab is-active" type="button" data-filter="all">الكل</button>
+              <button class="filter-tab" type="button" data-filter="academic">أكاديمي</button>
+              <button class="filter-tab" type="button" data-filter="quality">جودة</button>
+              <button class="filter-tab" type="button" data-filter="events">فعاليات</button>
+              <button class="filter-tab" type="button" data-filter="opinion">رأي</button>
+            </div>
+
+            <p class="result-count" aria-live="polite">
+              <span id="visible-count">5</span>
+              منصات متاحة
+            </p>
+          </div>
+
+          <div class="platform-grid" id="platform-grid">
+            <article class="platform-card theme-activity" data-card data-category="academic" data-keywords="النشاط العلمي الاعضاء البحث العلمي faculty activities">
+              <div class="platform-top">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32">
+                    <path d="M7 24V8h18v16H7Z" />
+                    <path d="M11 13h10M11 18h10M11 23h6" />
+                  </svg>
+                </span>
+                <span class="platform-category">الأعضاء والبحث العلمي</span>
+              </div>
+              <h3>النشاط العلمي للأعضاء</h3>
+              <p>
+                متابعة الأنشطة العلمية والبحثية لأعضاء هيئة التدريس في الكلية
+                ضمن واجهة منظمة وسهلة الرجوع.
+              </p>
+              <div class="platform-actions">
+                <a
+                  class="open-link"
+                  href="https://faculty-activities.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>فتح المنصة</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+                <button
+                  class="copy-link"
+                  type="button"
+                  data-copy="https://faculty-activities.netlify.app/"
+                  aria-label="نسخ رابط النشاط العلمي للأعضاء"
+                  title="نسخ الرابط"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 9h10v10H9z" />
+                    <path d="M5 15H4V4h11v1" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="platform-card theme-kpi" data-card data-category="quality" data-keywords="مؤشرات الأداء الكلية الجودة kpi performance">
+              <div class="platform-top">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32">
+                    <path d="M6 25h20" />
+                    <path d="M10 22v-8M16 22V8M22 22v-5" />
+                    <path d="M8 9l4-3 4 3 6-5" />
+                  </svg>
+                </span>
+                <span class="platform-category">الجودة والقياس</span>
+              </div>
+              <h3>مؤشرات الأداء للكلية</h3>
+              <p>
+                لوحة مخصصة لمتابعة مؤشرات الأداء الرئيسة ومساندة أعمال الجودة
+                والتطوير والتحسين المستمر.
+              </p>
+              <div class="platform-actions">
+                <a
+                  class="open-link"
+                  href="https://kpishare3h.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>فتح المنصة</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+                <button
+                  class="copy-link"
+                  type="button"
+                  data-copy="https://kpishare3h.netlify.app/"
+                  aria-label="نسخ رابط مؤشرات الأداء للكلية"
+                  title="نسخ الرابط"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 9h10v10H9z" />
+                    <path d="M5 15H4V4h11v1" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="platform-card theme-courses" data-card data-category="academic" data-keywords="خطط مقررات كلية الشريعة course plans programs">
+              <div class="platform-top">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32">
+                    <path d="M8 7h16v18H8z" />
+                    <path d="M12 11h8M12 16h8M12 21h5" />
+                    <path d="M24 10h2v18H12v-3" />
+                  </svg>
+                </span>
+                <span class="platform-category">الخطط والمقررات</span>
+              </div>
+              <h3>خطط ومقررات كلية الشريعة</h3>
+              <p>
+                مرجع للخطط الدراسية والمقررات، يساعد الطلبة وأعضاء هيئة التدريس
+                على الوصول السريع للمعلومات الأكاديمية.
+              </p>
+              <div class="platform-actions">
+                <a
+                  class="open-link"
+                  href="https://courseofshar3ah.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>فتح المنصة</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+                <button
+                  class="copy-link"
+                  type="button"
+                  data-copy="https://courseofshar3ah.netlify.app/"
+                  aria-label="نسخ رابط خطط ومقررات كلية الشريعة"
+                  title="نسخ الرابط"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 9h10v10H9z" />
+                    <path d="M5 15H4V4h11v1" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="platform-card theme-events" data-card data-category="events" data-keywords="تقويم الفعاليات المؤتمرات calendar conferences events">
+              <div class="platform-top">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32">
+                    <path d="M8 9h16v17H8z" />
+                    <path d="M8 14h16M12 6v5M20 6v5" />
+                    <path d="M12 18h3M18 18h3M12 22h3" />
+                  </svg>
+                </span>
+                <span class="platform-category">الفعاليات والمؤتمرات</span>
+              </div>
+              <h3>تقويم الفعاليات والمؤتمرات</h3>
+              <p>
+                تقويم يجمع الفعاليات والمؤتمرات ذات الصلة، ويعرضها بطريقة
+                مناسبة للمتابعة والتخطيط.
+              </p>
+              <div class="platform-actions">
+                <a
+                  class="open-link"
+                  href="https://conferences-calendar.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>فتح المنصة</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+                <button
+                  class="copy-link"
+                  type="button"
+                  data-copy="https://conferences-calendar.netlify.app/"
+                  aria-label="نسخ رابط تقويم الفعاليات والمؤتمرات"
+                  title="نسخ الرابط"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 9h10v10H9z" />
+                    <path d="M5 15H4V4h11v1" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+
+            <article class="platform-card theme-surveys" data-card data-category="opinion" data-keywords="ساحة الاستطلاعات الرأي surveys opinion feedback">
+              <div class="platform-top">
+                <span class="platform-icon" aria-hidden="true">
+                  <svg viewBox="0 0 32 32">
+                    <path d="M8 9h16v12H13l-5 5V9Z" />
+                    <path d="M12 13h8M12 17h5" />
+                  </svg>
+                </span>
+                <span class="platform-category">الاستطلاعات والرأي</span>
+              </div>
+              <h3>ساحة الاستطلاعات والرأي</h3>
+              <p>
+                مساحة لجمع الآراء والاستطلاعات المرتبطة بالكلية، بما يدعم
+                المشاركة وتحسين الخدمات.
+              </p>
+              <div class="platform-actions">
+                <a
+                  class="open-link"
+                  href="https://shari3ahsurveys.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>فتح المنصة</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+                <button
+                  class="copy-link"
+                  type="button"
+                  data-copy="https://shari3ahsurveys.netlify.app/"
+                  aria-label="نسخ رابط ساحة الاستطلاعات والرأي"
+                  title="نسخ الرابط"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 9h10v10H9z" />
+                    <path d="M5 15H4V4h11v1" />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <p class="empty-state" id="empty-state" hidden>لا توجد منصة مطابقة للبحث الحالي.</p>
+        </div>
+      </section>
+
+      <section class="overview-section" id="overview" aria-labelledby="overview-title">
+        <div class="section-shell overview-layout">
+          <div>
+            <p class="section-kicker">بوابة جامعة الطائف</p>
+            <h2 id="overview-title">وصول أسرع للمنصات المتخصصة</h2>
+          </div>
+          <p>
+            صممت هذه الصفحة لتكون نقطة رجوع موحدة للمنصات الإلكترونية المرتبطة
+            بكلية الشريعة والأنظمة، مع واجهة متجاوبة تناسب شاشة الجوال وسطح
+            المكتب.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>كلية الشريعة والأنظمة - جامعة الطائف</p>
+      <a href="#top">أعلى الصفحة</a>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
