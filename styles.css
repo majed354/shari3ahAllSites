@@ -8,11 +8,15 @@
   --olive: #3b5f4a;
   --olive-dark: #243f32;
   --gold: #c39a4b;
-  --activity: #168b8f;
-  --kpi: #c47b2c;
-  --courses: #7460a8;
-  --calendar: #4d8a57;
-  --surveys: #b84b6a;
+
+  /* Platform accents — harmonized, modern */
+  --activity: #0e8a8f;
+  --kpi: #d1832b;
+  --courses: #6f5bb0;
+  --calendar: #3f8b56;
+  --surveys: #b54667;
+
+  --orbit-size: 180px;
 }
 
 * {
@@ -28,9 +32,9 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(195, 154, 75, 0.18), transparent 60%),
-    radial-gradient(1000px 700px at 10% 110%, rgba(59, 95, 74, 0.22), transparent 60%),
-    linear-gradient(180deg, #fbf8f1 0%, #f1ece0 100%);
+    radial-gradient(900px 600px at 88% -10%, rgba(195, 154, 75, 0.14), transparent 60%),
+    radial-gradient(1000px 700px at 8% 110%, rgba(59, 95, 74, 0.18), transparent 60%),
+    linear-gradient(180deg, #fbf8f1 0%, #f2ecde 100%);
   font-family:
     "IBM Plex Sans Arabic",
     "Readex Pro",
@@ -40,6 +44,7 @@ body {
     Arial,
     sans-serif;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -56,11 +61,11 @@ svg {
   grid-template-rows: auto 1fr;
   align-content: start;
   justify-items: center;
-  gap: 48px;
+  gap: 56px;
   width: min(100%, 1280px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 56px 32px;
+  padding: 64px 32px;
 }
 
 /* ---------- Header ---------- */
@@ -68,7 +73,7 @@ svg {
 .page-header {
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: 12px;
   max-width: 720px;
   text-align: center;
 }
@@ -80,7 +85,7 @@ svg {
   font-weight: 900;
   letter-spacing: 0.5px;
   background: rgba(195, 154, 75, 0.18);
-  border: 1px solid rgba(195, 154, 75, 0.35);
+  border: 1px solid rgba(195, 154, 75, 0.32);
   border-radius: 999px;
 }
 
@@ -90,6 +95,7 @@ svg {
   font-size: clamp(28px, 4.5vw, 44px);
   font-weight: 900;
   line-height: 1.2;
+  letter-spacing: -0.2px;
 }
 
 .lede {
@@ -99,88 +105,106 @@ svg {
   font-weight: 700;
 }
 
-/* ---------- Orbits (Circles) ---------- */
+/* ---------- Orbits (identical-size circles) ---------- */
 
 .orbits {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, var(--orbit-size));
   gap: 28px;
-  width: 100%;
-  place-items: center;
   justify-content: center;
-  padding: 12px 0;
+  width: 100%;
+  padding: 8px 0 4px;
 }
 
 .orbit {
   --accent: var(--olive);
-  --accent-soft: color-mix(in srgb, var(--accent) 14%, white);
-  --accent-ring: color-mix(in srgb, var(--accent) 38%, transparent);
+  --accent-10: color-mix(in srgb, var(--accent) 10%, white);
+  --accent-20: color-mix(in srgb, var(--accent) 20%, white);
+  --accent-30: color-mix(in srgb, var(--accent) 30%, white);
 
   position: relative;
   display: grid;
+  grid-template-rows: auto auto auto;
   place-items: center;
-  width: min(100%, 210px);
-  aspect-ratio: 1 / 1;
-  padding: 22px 18px;
+  gap: 2px;
+  width: var(--orbit-size);
+  height: var(--orbit-size);
+  padding: 22px 16px;
   text-align: center;
-  background: radial-gradient(circle at 50% 30%, #ffffff 0%, var(--accent-soft) 100%);
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, white);
+  background:
+    radial-gradient(120% 100% at 50% 0%, #ffffff 0%, rgba(255, 255, 255, 0.7) 55%, var(--accent-10) 100%);
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, #e8e0d1);
   border-radius: 50%;
   box-shadow:
-    0 14px 34px rgba(36, 63, 50, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    0 12px 30px rgba(36, 63, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -18px 30px rgba(36, 63, 50, 0.03);
   transition:
-    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 320ms ease,
-    border-color 320ms ease;
+    transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 360ms ease;
   isolation: isolate;
+  overflow: hidden;
 }
 
-.orbit::after {
+/* Animated gradient ring that appears on hover */
+.orbit::before {
   position: absolute;
-  inset: -6px;
+  inset: -2px;
   content: "";
   border-radius: 50%;
+  padding: 2px;
   background: conic-gradient(
-    from 180deg,
-    var(--accent-ring),
-    transparent 40%,
-    var(--accent-ring) 90%
+    from 140deg,
+    transparent 0deg,
+    var(--accent) 80deg,
+    transparent 200deg,
+    var(--accent) 320deg,
+    transparent 360deg
   );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
   opacity: 0;
-  filter: blur(14px);
-  transition: opacity 380ms ease;
+  transition: opacity 400ms ease;
   z-index: -1;
 }
 
-.orbit-halo {
+/* Subtle shine sweep */
+.orbit::after {
   position: absolute;
-  inset: 8px;
-  border: 1px dashed color-mix(in srgb, var(--accent) 26%, transparent);
-  border-radius: 50%;
-  opacity: 0.6;
-  transition:
-    transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1),
-    opacity 320ms ease;
+  top: -40%;
+  left: -20%;
+  width: 55%;
+  height: 65%;
+  content: "";
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0) 70%);
+  transform: translateX(-120%) rotate(12deg);
+  transition: transform 820ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .orbit-icon {
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   margin-bottom: 10px;
   color: #ffffff;
-  background: linear-gradient(145deg, var(--accent), color-mix(in srgb, var(--accent) 70%, black));
-  border: 1px solid color-mix(in srgb, var(--accent) 50%, white);
-  border-radius: 50%;
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 32%, transparent);
+  background: linear-gradient(138deg, var(--accent), color-mix(in srgb, var(--accent) 68%, #0b0f0c));
+  border-radius: 18px;
+  box-shadow:
+    0 8px 20px color-mix(in srgb, var(--accent) 38%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .orbit-icon svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -190,17 +214,17 @@ svg {
 
 .orbit-title {
   color: var(--olive-dark);
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 900;
   line-height: 1.3;
+  letter-spacing: -0.1px;
 }
 
 .orbit-sub {
-  margin-top: 4px;
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
 /* Per-platform accent */
@@ -213,24 +237,24 @@ svg {
 /* Hover / focus effects */
 .orbit:hover,
 .orbit:focus-visible {
-  transform: translateY(-6px) scale(1.04);
-  border-color: color-mix(in srgb, var(--accent) 55%, white);
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
   box-shadow:
-    0 22px 50px color-mix(in srgb, var(--accent) 28%, transparent),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    0 28px 56px color-mix(in srgb, var(--accent) 22%, transparent),
+    0 10px 22px rgba(36, 63, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
   outline: 0;
+}
+
+.orbit:hover::before,
+.orbit:focus-visible::before {
+  opacity: 1;
+  animation: orbit-ring 3.6s linear infinite;
 }
 
 .orbit:hover::after,
 .orbit:focus-visible::after {
-  opacity: 0.9;
-  animation: orbit-spin 4s linear infinite;
-}
-
-.orbit:hover .orbit-halo,
-.orbit:focus-visible .orbit-halo {
-  transform: rotate(22deg) scale(1.02);
-  opacity: 1;
+  transform: translateX(260%) rotate(12deg);
 }
 
 .orbit:hover .orbit-icon,
@@ -238,102 +262,77 @@ svg {
   transform: translateY(-2px) scale(1.08) rotate(-4deg);
 }
 
-@keyframes orbit-spin {
+@keyframes orbit-ring {
   to { transform: rotate(360deg); }
 }
 
-/* ---------- Responsive ---------- */
-
-@media (max-width: 1100px) {
-  .orbits {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-  }
-
-  .orbit:nth-child(4),
-  .orbit:nth-child(5) {
-    /* center the two leftover circles on the second row */
-  }
-
-  .orbit:nth-child(4) {
-    grid-column: 1 / span 1;
-    justify-self: end;
-  }
-
-  .orbit:nth-child(5) {
-    grid-column: 3 / span 1;
-    justify-self: start;
-  }
-}
+/* ---------- Responsive (all circles identical size) ---------- */
 
 @media (max-width: 760px) {
+  :root { --orbit-size: 160px; }
+
   .page-shell {
-    padding: 40px 20px;
-    gap: 32px;
+    padding: 44px 20px;
+    gap: 40px;
   }
 
   .orbits {
-    grid-template-columns: repeat(2, 1fr);
     gap: 22px;
   }
 
-  .orbit:nth-child(4),
-  .orbit:nth-child(5) {
-    grid-column: auto;
-    justify-self: center;
-  }
-
-  .orbit:nth-child(5) {
-    grid-column: 1 / -1;
-    width: min(100%, 230px);
-  }
-
   .orbit {
-    width: min(100%, 200px);
-    padding: 18px 14px;
+    padding: 18px 12px;
   }
 
   .orbit-icon {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
   }
 
   .orbit-icon svg {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 
   .orbit-title {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .orbit-sub {
-    font-size: 12px;
+    font-size: 11.5px;
   }
 }
 
 @media (max-width: 420px) {
+  :root { --orbit-size: 150px; }
+
   .page-shell {
-    padding: 28px 14px;
-    gap: 26px;
+    padding: 30px 14px;
+    gap: 30px;
   }
 
   .orbits {
     gap: 18px;
   }
 
-  .orbit {
-    width: min(100%, 170px);
-  }
-
   .orbit-icon {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
   }
 
   .orbit-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .orbit-title {
+    font-size: 13.5px;
+  }
+
+  .orbit-sub {
+    font-size: 11px;
   }
 }
 
