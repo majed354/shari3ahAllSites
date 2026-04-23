@@ -5,419 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="مركز عمليات موحد للمنصات الإلكترونية بكلية الشريعة والأنظمة بجامعة الطائف."
+      content="بوابة سريعة تجمع روابط المنصات الإلكترونية لكلية الشريعة والأنظمة بجامعة الطائف."
     />
-    <title>مركز عمليات كلية الشريعة والأنظمة</title>
+    <title>منصات كلية الشريعة والأنظمة</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#dashboard">تجاوز إلى لوحة المعلومات</a>
+    <main class="page-shell" aria-labelledby="page-title">
+      <header class="page-header">
+        <span class="eyebrow">جامعة الطائف</span>
+        <h1 id="page-title">منصات كلية الشريعة والأنظمة</h1>
+        <p class="lede">روابط منصات الكلية في صفحة واحدة</p>
+      </header>
 
-    <header class="command-bar" aria-label="الشريط العلوي الموحد">
-      <div class="brand-group">
-        <button
-          class="icon-button menu-toggle"
-          id="sidebar-toggle"
-          type="button"
-          aria-label="طي القائمة الجانبية"
-          aria-controls="sidebar"
-          aria-expanded="true"
+      <section class="orbits" aria-label="قائمة المنصات">
+        <a
+          class="orbit orbit-activity"
+          href="https://faculty-activities.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-        </button>
-
-        <a class="brand" href="#dashboard" aria-label="مركز عمليات كلية الشريعة والأنظمة">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 17.5 24 8l16 9.5v18.7L24 42 8 36.2V17.5Z" />
-              <path d="M16 21h16M16 27h16M16 33h10" />
-            </svg>
-          </span>
-          <span class="brand-copy">
-            <strong>مركز عمليات كلية الشريعة</strong>
-            <small>جامعة الطائف</small>
-          </span>
-        </a>
-      </div>
-
-      <form class="smart-search" role="search" autocomplete="off">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="m21 21-4.2-4.2M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
-        </svg>
-        <input
-          id="smart-search"
-          type="search"
-          placeholder="ابحث في المقررات، المؤشرات، المؤتمرات، الاستطلاعات..."
-          aria-label="بحث موحد عبر منصات الكلية"
-          aria-controls="search-results"
-        />
-        <button class="search-clear" id="search-clear" type="button" aria-label="مسح البحث" hidden>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
-        </button>
-        <div class="search-results" id="search-results" role="listbox" hidden></div>
-      </form>
-
-      <div class="top-actions" aria-label="إجراءات الحساب">
-        <button class="icon-button notification-button" type="button" aria-label="الإشعارات">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M18 8a6 6 0 1 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
-            <path d="M10 21h4" />
-          </svg>
-          <span class="action-badge">4</span>
-        </button>
-        <button class="language-toggle" type="button">EN</button>
-        <button class="profile-chip" type="button" aria-label="الملف الشخصي الموحد">
-          <span class="avatar" aria-hidden="true">م</span>
-          <span class="profile-copy">
-            <strong>عضو هيئة تدريس</strong>
-            <small>ملف موحد</small>
-          </span>
-        </button>
-      </div>
-    </header>
-
-    <div class="app-layout">
-      <aside class="sidebar" id="sidebar" aria-label="أدوات الكلية">
-        <div class="sidebar-section">
-          <p class="sidebar-label">الأدوات</p>
-          <nav class="tool-nav">
-            <button class="tool-nav-item is-active" type="button" data-open-tool="activity">
-              <span class="tool-color activity-color"></span>
-              <span class="tool-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 19V5h14v14H5Z" />
-                  <path d="M8 9h8M8 13h8M8 17h5" />
-                </svg>
-              </span>
-              <span class="tool-label">
-                <strong>النشاط العلمي</strong>
-                <small>3 مهام</small>
-              </span>
-            </button>
-
-            <button class="tool-nav-item" type="button" data-open-tool="kpi">
-              <span class="tool-color kpi-color"></span>
-              <span class="tool-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 20h16" />
-                  <path d="M8 17v-7M12 17V5M16 17v-4" />
-                  <path d="m7 9 4-3 4 4 4-6" />
-                </svg>
-              </span>
-              <span class="tool-label">
-                <strong>مؤشرات الأداء</strong>
-                <small>مؤشر متأخر</small>
-              </span>
-            </button>
-
-            <button class="tool-nav-item" type="button" data-open-tool="courses">
-              <span class="tool-color courses-color"></span>
-              <span class="tool-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 4h12v16H6z" />
-                  <path d="M9 8h6M9 12h6M9 16h4" />
-                </svg>
-              </span>
-              <span class="tool-label">
-                <strong>الخطط والمقررات</strong>
-                <small>تحديثان</small>
-              </span>
-            </button>
-
-            <button class="tool-nav-item" type="button" data-open-tool="calendar">
-              <span class="tool-color calendar-color"></span>
-              <span class="tool-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 6h14v14H5z" />
-                  <path d="M5 10h14M8 3v5M16 3v5" />
-                </svg>
-              </span>
-              <span class="tool-label">
-                <strong>تقويم الفعاليات</strong>
-                <small>3 قريبة</small>
-              </span>
-            </button>
-
-            <button class="tool-nav-item" type="button" data-open-tool="surveys">
-              <span class="tool-color surveys-color"></span>
-              <span class="tool-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 5h14v10H9l-4 4V5Z" />
-                  <path d="M8 9h8M8 12h5" />
-                </svg>
-              </span>
-              <span class="tool-label">
-                <strong>الاستطلاعات</strong>
-                <small>نشط الآن</small>
-              </span>
-            </button>
-          </nav>
-        </div>
-
-        <div class="committee-panel">
-          <span class="panel-icon" aria-hidden="true">
+          <span class="orbit-halo" aria-hidden="true"></span>
+          <span class="orbit-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
-              <path d="M4 19V5h16v14H4Z" />
-              <path d="M8 15v-4M12 15V8M16 15v-2" />
+              <path d="M5 19V5h14v14H5Z" />
+              <path d="M8 9h8M8 13h8M8 17h5" />
             </svg>
           </span>
-          <div>
-            <p>وضع المسؤول</p>
-            <strong>ملخص القسم</strong>
-            <small>جاهز للتصدير</small>
-          </div>
-        </div>
-      </aside>
+          <span class="orbit-title">النشاط العلمي للأعضاء</span>
+          <span class="orbit-sub">الأبحاث والمشاركات العلمية</span>
+        </a>
 
-      <main class="dashboard" id="dashboard">
-        <section class="hero-panel" aria-labelledby="page-title">
-          <div class="hero-copy">
-            <p class="eyebrow">لوحة معلومات موحدة</p>
-            <h1 id="page-title">مركز عمليات كلية الشريعة والأنظمة</h1>
-            <p>
-              واجهة واحدة تضع النشاط العلمي، المؤشرات، المقررات، الفعاليات،
-              والاستطلاعات في مسار عمل يومي واضح.
-            </p>
-            <div class="hero-actions">
-              <a class="primary-action" href="#personal-strip">متابعة مهامي</a>
-              <button class="secondary-action" type="button" data-open-tool="activity">
-                إضافة نشاط علمي
-              </button>
-            </div>
-          </div>
-
-          <div class="hero-metrics" aria-label="ملخص سريع">
-            <div>
-              <span>12</span>
-              <small>مهمة مفتوحة</small>
-            </div>
-            <div>
-              <span>87%</span>
-              <small>إنجاز المؤشرات</small>
-            </div>
-            <div>
-              <span>3</span>
-              <small>فعاليات قادمة</small>
-            </div>
-          </div>
-        </section>
-
-        <section class="dashboard-heading" aria-labelledby="tools-title">
-          <div>
-            <p class="section-kicker">المنصات الخمس</p>
-            <h2 id="tools-title">نافذة حيّة على أعمال الكلية</h2>
-          </div>
-          <p class="last-update">آخر تحديث للعرض: اليوم</p>
-        </section>
-
-        <section class="ops-grid" aria-label="بطاقات المنصات">
-          <article class="ops-card activity-card is-selected" tabindex="0" role="button" data-open-tool="activity">
-            <div class="card-topline"></div>
-            <div class="card-head">
-              <span class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 19V5h14v14H5Z" />
-                  <path d="M8 9h8M8 13h8M8 17h5" />
-                </svg>
-              </span>
-              <span class="status-pill">إنتاج الفصل</span>
-            </div>
-            <h3>النشاط العلمي للأعضاء</h3>
-            <div class="stat-row">
-              <div><strong>6</strong><span>بحوث</span></div>
-              <div><strong>2</strong><span>مؤتمرات</span></div>
-              <div><strong>4</strong><span>أنشطة</span></div>
-            </div>
-            <div class="comparison">
-              <span>مقارنتك بمتوسط القسم</span>
-              <div class="progress-track"><i style="width: 74%"></i></div>
-            </div>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-tool="activity">فتح داخل البوابة</button>
-              <a href="https://faculty-activities.netlify.app/" target="_blank" rel="noopener noreferrer">رابط مستقل</a>
-            </div>
-          </article>
-
-          <article class="ops-card kpi-card" tabindex="0" role="button" data-open-tool="kpi">
-            <div class="card-topline"></div>
-            <div class="card-head">
-              <span class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 20h16" />
-                  <path d="M8 17v-7M12 17V5M16 17v-4" />
-                  <path d="m7 9 4-3 4 4 4-6" />
-                </svg>
-              </span>
-              <span class="status-pill warning">متابعة حرجة</span>
-            </div>
-            <h3>مؤشرات الأداء للكلية</h3>
-            <ul class="signal-list">
-              <li><span class="signal green"></span><strong>92%</strong><small>الاعتماد الأكاديمي</small></li>
-              <li><span class="signal amber"></span><strong>78%</strong><small>نشر الأبحاث</small></li>
-              <li><span class="signal red"></span><strong>61%</strong><small>إغلاق التحسينات</small></li>
-            </ul>
-            <svg class="sparkline" viewBox="0 0 180 52" aria-hidden="true">
-              <path d="M4 42 C24 35, 32 28, 48 30 S76 45, 92 33 S124 12, 144 20 S164 36, 176 16" />
+        <a
+          class="orbit orbit-kpi"
+          href="https://kpishare3h.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="orbit-halo" aria-hidden="true"></span>
+          <span class="orbit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 20h16" />
+              <path d="M8 17v-7M12 17V5M16 17v-4" />
+              <path d="m7 9 4-3 4 4 4-6" />
             </svg>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-tool="kpi">فتح داخل البوابة</button>
-              <a href="https://kpishare3h.netlify.app/" target="_blank" rel="noopener noreferrer">رابط مستقل</a>
-            </div>
-          </article>
+          </span>
+          <span class="orbit-title">مؤشرات الأداء</span>
+          <span class="orbit-sub">متابعة مؤشرات الجودة</span>
+        </a>
 
-          <article class="ops-card courses-card" tabindex="0" role="button" data-open-tool="courses">
-            <div class="card-topline"></div>
-            <div class="card-head">
-              <span class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 4h12v16H6z" />
-                  <path d="M9 8h6M9 12h6M9 16h4" />
-                </svg>
-              </span>
-              <span class="status-pill">الفصل الحالي</span>
-            </div>
-            <h3>خطط ومقررات كلية الشريعة</h3>
-            <div class="course-list">
-              <p><strong>أصول الفقه</strong><span>توصيف ينتظر التحديث</span></p>
-              <p><strong>النظام التجاري</strong><span>مراجعة خطة قادمة</span></p>
-              <p><strong>القواعد الفقهية</strong><span>مقرر مسند</span></p>
-            </div>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-tool="courses">فتح داخل البوابة</button>
-              <a href="https://courseofshar3ah.netlify.app/" target="_blank" rel="noopener noreferrer">رابط مستقل</a>
-            </div>
-          </article>
+        <a
+          class="orbit orbit-courses"
+          href="https://courseofshar3ah.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="orbit-halo" aria-hidden="true"></span>
+          <span class="orbit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 4h12v16H6z" />
+              <path d="M9 8h6M9 12h6M9 16h4" />
+            </svg>
+          </span>
+          <span class="orbit-title">الخطط والمقررات</span>
+          <span class="orbit-sub">الخطط وتوصيفات المقررات</span>
+        </a>
 
-          <article class="ops-card calendar-card" tabindex="0" role="button" data-open-tool="calendar">
-            <div class="card-topline"></div>
-            <div class="card-head">
-              <span class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 6h14v14H5z" />
-                  <path d="M5 10h14M8 3v5M16 3v5" />
-                </svg>
-              </span>
-              <span class="status-pill">أقرب الفعاليات</span>
-            </div>
-            <h3>تقويم الفعاليات والمؤتمرات</h3>
-            <div class="timeline">
-              <p><time>28 أبريل</time><span>ندوة الأنظمة العدلية - الرياض</span></p>
-              <p><time>6 مايو</time><span>ملتقى البحث الفقهي - مكة</span></p>
-              <p><time>19 مايو</time><span>مؤتمر التعليم القانوني - جدة</span></p>
-            </div>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-tool="calendar">فتح داخل البوابة</button>
-              <a href="https://conferences-calendar.netlify.app/" target="_blank" rel="noopener noreferrer">رابط مستقل</a>
-            </div>
-          </article>
+        <a
+          class="orbit orbit-calendar"
+          href="https://conferences-calendar.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="orbit-halo" aria-hidden="true"></span>
+          <span class="orbit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 6h14v14H5z" />
+              <path d="M5 10h14M8 3v5M16 3v5" />
+            </svg>
+          </span>
+          <span class="orbit-title">الفعاليات والمؤتمرات</span>
+          <span class="orbit-sub">المؤتمرات القريبة</span>
+        </a>
 
-          <article class="ops-card surveys-card" tabindex="0" role="button" data-open-tool="surveys">
-            <div class="card-topline"></div>
-            <div class="card-head">
-              <span class="card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M5 5h14v10H9l-4 4V5Z" />
-                  <path d="M8 9h8M8 12h5" />
-                </svg>
-              </span>
-              <span class="status-pill alert">يغلق قريبًا</span>
-            </div>
-            <h3>ساحة الاستطلاعات والرأي</h3>
-            <div class="survey-focus">
-              <strong>استبانة رضا المستفيدين</strong>
-              <span>متبقي 3 أيام</span>
-            </div>
-            <div class="comparison">
-              <span>مشاركة القسم</span>
-              <div class="progress-track coral"><i style="width: 68%"></i></div>
-            </div>
-            <div class="card-actions">
-              <button class="card-button" type="button" data-open-tool="surveys">فتح داخل البوابة</button>
-              <a href="https://shari3ahsurveys.netlify.app/" target="_blank" rel="noopener noreferrer">رابط مستقل</a>
-            </div>
-          </article>
-        </section>
-
-        <section class="embedded-workspace" id="embedded-workspace" aria-labelledby="workspace-title">
-          <div class="workspace-head">
-            <div>
-              <p class="section-kicker">تبويب مدمج</p>
-              <h2 id="workspace-title">النشاط العلمي للأعضاء</h2>
-              <p id="workspace-status">منصة الأعضاء والبحث العلمي</p>
-            </div>
-            <div class="workspace-actions">
-              <button class="ghost-action" id="copy-active-link" type="button">نسخ الرابط</button>
-              <a
-                class="primary-action small"
-                id="external-active-link"
-                href="https://faculty-activities.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                فتح مستقل
-              </a>
-            </div>
-          </div>
-
-          <div class="iframe-shell">
-            <iframe
-              id="tool-frame"
-              title="النشاط العلمي للأعضاء"
-              src="https://faculty-activities.netlify.app/"
-              loading="lazy"
-            ></iframe>
-          </div>
-        </section>
-
-        <section class="personal-strip" id="personal-strip" aria-labelledby="personal-title">
-          <div class="section-title">
-            <p class="section-kicker">الشريط الشخصي</p>
-            <h2 id="personal-title">كل ما ينتظر إجراءك في مكان واحد</h2>
-          </div>
-
-          <div class="personal-grid">
-            <section class="personal-panel" aria-labelledby="tasks-title">
-              <h3 id="tasks-title">مهامي المعلّقة</h3>
-              <ul class="task-list">
-                <li><span class="dot activity-color"></span>إضافة نشاط مجتمعي للفصل الحالي</li>
-                <li><span class="dot courses-color"></span>تحديث توصيف مقرر أصول الفقه</li>
-                <li><span class="dot surveys-color"></span>المشاركة في استبانة رضا المستفيدين</li>
-              </ul>
-            </section>
-
-            <section class="personal-panel" aria-labelledby="activity-title">
-              <h3 id="activity-title">آخر نشاطي</h3>
-              <ol class="activity-feed">
-                <li><time>09:20</time><span>أضيف بحث جديد إلى النشاط العلمي</span></li>
-                <li><time>أمس</time><span>تمت مراجعة مؤشر إغلاق التحسينات</span></li>
-                <li><time>الأحد</time><span>تم تحديث توصيف مقرر</span></li>
-              </ol>
-            </section>
-
-            <section class="personal-panel quick-panel" aria-labelledby="quick-title">
-              <h3 id="quick-title">روابط سريعة</h3>
-              <div class="quick-actions">
-                <button type="button" data-open-tool="activity">إضافة نشاط</button>
-                <button type="button" data-open-tool="surveys">تعبئة استبانة</button>
-                <button type="button" data-open-tool="courses">تحميل توصيف</button>
-                <button type="button" data-open-tool="kpi">تقرير مؤشرات</button>
-              </div>
-            </section>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <footer class="site-footer">
-      <p>كلية الشريعة والأنظمة - جامعة الطائف</p>
-      <a href="#dashboard">أعلى الصفحة</a>
-    </footer>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="app.js"></script>
+        <a
+          class="orbit orbit-surveys"
+          href="https://shari3ahsurveys.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="orbit-halo" aria-hidden="true"></span>
+          <span class="orbit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 5h14v10H9l-4 4V5Z" />
+              <path d="M8 9h8M8 12h5" />
+            </svg>
+          </span>
+          <span class="orbit-title">الاستطلاعات والرأي</span>
+          <span class="orbit-sub">الاستبانات وقياس الرأي</span>
+        </a>
+      </section>
+    </main>
   </body>
 </html>
