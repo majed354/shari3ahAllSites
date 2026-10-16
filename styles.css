@@ -15,6 +15,7 @@
   --courses: #6f5bb0;
   --calendar: #3f8b56;
   --surveys: #b54667;
+  --compass: #356b9b;
 
   --orbit-size: 180px;
 }
@@ -58,6 +59,7 @@ svg {
 
 .page-shell {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   align-content: start;
   justify-items: center;
@@ -111,8 +113,10 @@ svg {
   display: grid;
   grid-template-columns: repeat(auto-fit, var(--orbit-size));
   gap: 28px;
+  align-content: start;
   justify-content: center;
   width: 100%;
+  max-width: calc(3 * var(--orbit-size) + 56px);
   padding: 8px 0 4px;
 }
 
@@ -233,6 +237,7 @@ svg {
 .orbit-courses  { --accent: var(--courses); }
 .orbit-calendar { --accent: var(--calendar); }
 .orbit-surveys  { --accent: var(--surveys); }
+.orbit-compass  { --accent: var(--compass); }
 
 /* Hover / focus effects */
 .orbit:hover,
