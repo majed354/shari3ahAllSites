@@ -350,3 +350,6 @@ svg {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Additional platform uses the existing circle design and stays centered. */
+.orbit-committees { --accent: #3d7c86; grid-column: 1 / -1; justify-self: center; }
