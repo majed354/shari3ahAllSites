@@ -1,0 +1,26 @@
+@font-face{font-family:NotoArabic;src:url('/assets/fonts/noto-sans-arabic-1.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:NotoArabic;src:url('/assets/fonts/noto-sans-arabic-5.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{color-scheme:light;font-family:NotoArabic,Arial,sans-serif;color:#133c35;background:#f5f6f1;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:40px 20px;background:radial-gradient(ellipse at 12% 12%,#dfeae2 0,transparent 46%),radial-gradient(ellipse at 93% 90%,#eee6d1 0,transparent 45%),#f5f6f1}
+.notice{width:100%;max-width:620px;text-align:center;background:#fff;border:1px solid #dfe5dc;border-radius:28px;padding:34px 48px 24px;box-shadow:0 20px 70px #2147370c}
+.brand{display:flex;align-items:center;justify-content:center;gap:17px;margin-bottom:36px}
+.brand-name{font-size:28px;font-weight:750;letter-spacing:-1.1px}
+.brand-caption{text-align:right;border-right:1px solid #d6dfd7;padding-right:17px;font-size:12px;line-height:1.8;color:#5b6d65}
+.move-symbol{width:62px;height:62px;border:1px solid #dce7df;background:#f0f5ef;border-radius:20px;display:grid;place-items:center;margin:0 auto 22px;color:#58755e}
+.move-symbol svg{width:30px;height:30px}
+.eyebrow{font-size:12px;font-weight:650;color:#788158;margin:0 0 12px}
+h1{font-size:44px;font-weight:750;line-height:1.5;letter-spacing:-1px;margin:0 0 16px}
+h1 span{color:#64805b}
+.intro{color:#5b6d65;font-size:16px;line-height:2;margin:0 auto 28px;max-width:440px}
+.primary-link{display:flex;align-items:center;justify-content:center;gap:14px;min-height:58px;background:#173e35;border:1px solid #173e35;border-radius:13px;text-decoration:none;color:#fff;font-size:16px;font-weight:650;padding:12px 18px;transition:background .15s ease}
+.primary-link:hover{background:#285246}
+.primary-link svg{height:22px;width:22px;flex-shrink:0}
+a:focus-visible{outline:3px solid #ad8638;outline-offset:5px}
+.hint{font-size:12px;color:#728075;line-height:1.9;margin:14px 0 30px}
+.address{border-top:1px solid #edf0e9;padding-top:21px;display:grid;gap:7px}
+.address span{font-size:11px;color:#7b897f}
+.address a{color:#466153;font-size:12px;line-height:1.8;overflow-wrap:anywhere;text-underline-offset:4px}
+footer{font-size:10px;color:#939c91;margin-top:27px}
+@media(max-width:480px){body{padding:20px 14px}.notice{padding:28px 22px 20px;border-radius:22px}.brand{margin-bottom:28px}.brand-name{font-size:25px}h1{font-size:36px;letter-spacing:-.6px}.intro{font-size:14px}.primary-link{font-size:14px;gap:10px}.hint{font-size:11px}.address a{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.primary-link{transition:none}}
